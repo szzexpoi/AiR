@@ -6,7 +6,7 @@ This code implements the Attention with Reasoning capability (AiR) framework. It
 
 An example for evaluating the human attentions with correct and incorrect answers is illustrated below.
 
-![teaser](data/teaser.png?raw=true)
+![teaser](data/teaser.jpg?raw=true)
 
 ### Reference
 If you use our code or data, please cite our paper:
