@@ -4,6 +4,10 @@ This code implements the Attention with Reasoning capability (AiR) framework. It
 - AiR-M: an attention supervision method for learning attention progressively throughout the reasoning process, and
 - AiR-D: the first human eye-tracking dataset for Visual Question Answering task.
 
+An example for evaluating the human attentions with correct and incorrect answers is illustrated below.
+
+![teaser](data/teaser.png?raw=true)
+
 ### Reference
 If you use our code or data, please cite our paper:
 ```
