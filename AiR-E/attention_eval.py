@@ -6,6 +6,7 @@ import operator
 from glob import glob
 import re
 import operator
+import argparse
 
 parser = argparse.ArgumentParser(description="Computing the AiR-E scores for attention")
 parser.add_argument("--image", type=str, required=True, help="path to GQA images")
@@ -93,6 +94,7 @@ def main():
     scene_graph = json.load(open(os.path.join(args.scene_graph,'val_sceneGraphs.json')))
     semantic_info = json.load(open(os.path.join(args.semantics,'simplified_semantics_val.json')))
     bbox_dir = args.bbox_dir
+    prior_appearance = get_prior_appearance()
 
     if args.att_type == 'human':
         # human attention is stored as saliency map

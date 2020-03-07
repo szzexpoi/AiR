@@ -5,6 +5,7 @@ import cv2
 import operator
 from glob import glob
 import re
+import argparse
 
 parser = argparse.ArgumentParser(description="Generating attention mask for supervision")
 parser.add_argument("--bbox_dir", type=str, required=True, help="path to object bounding box")

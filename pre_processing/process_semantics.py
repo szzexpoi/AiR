@@ -27,7 +27,7 @@ def search_dep(semantics,dep_idx):
 for split in ['train','val']:
     question = json.load(open(os.path.join(args.question,split+'_balanced_questions.json')))
     scene_graph = json.load(open(os.path.join(args.scene_graph,split+'_sceneGraphs.json')))
-    simplified_mapping = json.load(open('./simplified_mapping.json'))
+    simplified_mapping = json.load(open(os.path.join(args.mapping,'simplified_mapping.json')))
 
     processed_semantic = dict()
     for qid in question.keys():
