@@ -11,7 +11,7 @@ Anonymous submission for ECCV 2020, paper ID 445.
 ```
 
 ### Disclaimer
-We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features from [LXMERT](https://github.com/airsplay/lxmert). Please refer to these links for further README information.   
+We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). Please refer to these links for further README information.   
 
 ### Requirements
 1. Requirements for Pytorch. We used Pytorch 1.2.0 in our experiments.
