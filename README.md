@@ -54,7 +54,7 @@ The output is a Json file storing the scores. You can access the scores for a sp
 For each step, the result contains the reasoning operation, level of dependency in the process, and the AiR-E score.
 
 ### Attention Supervision (AiR-M)
-We provide the implementation of our method on two state-of-the-art VQA models, including UpDown and BAN. Before training with our method, we need to first generate the dictionary for questions and answers:
+We provide the implementation of our method on two state-of-the-art VQA models, including UpDown and BAN. Before training with our method, you need to first generate the dictionary for questions and answers:
   ```
   cd ./AiR-E
   python preprocess_lang.py --question $GQA_ROOT/question
