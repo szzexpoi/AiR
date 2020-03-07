@@ -2,6 +2,7 @@ import numpy as np
 import json
 import operator
 import os
+import argparse
 
 
 parser = argparse.ArgumentParser(description="Obatining dictionary for questions and answers")
