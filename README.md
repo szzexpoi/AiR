@@ -18,10 +18,10 @@ Anonymous submission for ECCV 2020, paper ID 445.
 We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). Please refer to these links for further README information.   
 
 ### Requirements
-1. Requirements for Pytorch. We used Pytorch 1.2.0 in our experiments.
+1. Requirements for Pytorch. We use Pytorch 1.2.0 in our experiments.
 2. Requirements for Tensorflow. We only use the tensorboard for visualization.
 3. Python 3.6+
-4. Python 2.7
+4. Python 2.7 (for feature extraction)
 5. You may need to install the OpenCV package (CV2) for Python.
 
 ### Data Pre-processing
@@ -68,9 +68,9 @@ Then the training process for UpDown can be called as:
   ```
   python main_updown.py --mode train --anno_dir $GQA_ROOT/question --prep_dir ./processed_data --img_dir $FEATURE_DIR/features --checkpoint_dir $CHECKPOINT --ss_factor 2 --ss_step 1
   ```
-We implement a schedule sampling strategy for optimizing the operation prediction. However, it did not contribute too much in our experiments and thus we disable it with `--ss_factor 2` and `--ss_step 1`. If you want to enable it, simply modify the increase factor and step.
+We implement a schedule sampling strategy for optimizing the operation prediction. However, it did not contribute too much in boosting the performance and thus we disabled it in our experiments with `--ss_factor 2` and `--ss_step 1`. If you want to enable it, simply replace the increase factor and step with appropriate values (e.g., `--ss_factor 0.2` and `--ss_step 3`).
 
-For training with BAN, you need to input the bounding box positions:
+For training with BAN, you need to input the bounding box positions as well:
   ```
   python main_ban.py --mode train --anno_dir $GQA_ROOT/question --prep_dir ./processed_data --img_dir $FEATURE_DIR/features --bbox_dir $FEATURE_DIR/box --checkpoint_dir $CHECKPOINT --ss_factor 2 --ss_step 1
   ```
