@@ -20,8 +20,8 @@ We adopt the official implementation of the [Bilinear Attention Network](https:/
 ### Requirements
 1. Requirements for Pytorch. We use Pytorch 1.2.0 in our experiments.
 2. Requirements for Tensorflow. We only use the tensorboard for visualization.
-3. Python 3.6+
-4. Python 2.7 (for feature extraction)
+3. Python 3.6+ (for most of our experiments)
+4. Python 2.7 (only for extracting features from the tsv files)
 5. You may need to install the OpenCV package (CV2) for Python.
 
 ### Data Pre-processing
