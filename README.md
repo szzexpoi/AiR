@@ -15,7 +15,7 @@ Anonymous submission for ECCV 2020, paper ID 445.
 ```
 
 ### Disclaimer
-We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). Please refer to these links for further README information.   
+We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). For GRU with Bayesian Dropout (used in our UpDown reimplementation), we adopt the implementation from [this repository](https://github.com/Cadene/skip-thoughts.torch/tree/master/pytorch). Please refer to these links for further README information. 
 
 ### Requirements
 1. Requirements for Pytorch. We use Pytorch 1.2.0 in our experiments.
