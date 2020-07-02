@@ -11,7 +11,7 @@ An example for evaluating the human attentions with correct and incorrect answer
 ### Reference
 If you use our code or data, please cite our paper:
 ```
-@InProceedings{hint,
+@InProceedings{air,
 author = {Chen, Shi and Jiang, Ming and Yang, Jinhui and Zhao, Qi},
 title = {AiR: Attention with Reasoning Capability},
 booktitle = {ECCV},
