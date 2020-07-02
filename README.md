@@ -11,11 +11,16 @@ An example for evaluating the human attentions with correct and incorrect answer
 ### Reference
 If you use our code or data, please cite our paper:
 ```
-Anonymous submission for ECCV 2020, paper ID 445.
+@InProceedings{hint,
+author = {Chen, Shi and Jiang, Ming and Yang, Jinhui and Zhao, Qi},
+title = {AiR: Attention with Reasoning Capability},
+booktitle = {ECCV},
+year = {2020}
+}
 ```
 
 ### Disclaimer
-We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). For GRU with Bayesian Dropout (used in our UpDown reimplementation), we adopt the implementation from [this repository](https://github.com/Cadene/skip-thoughts.torch/tree/master/pytorch). Please refer to these links for further README information. 
+We adopt the official implementation of the [Bilinear Attention Network](https://github.com/jnhwkim/ban-vqa) as a backbone model for attention supervision. We use the bottom-up features provided in [this repository](https://github.com/airsplay/lxmert). For GRU with Bayesian Dropout (used in our UpDown reimplementation), we adopt the implementation from [this repository](https://github.com/Cadene/skip-thoughts.torch/tree/master/pytorch). Please refer to these links for further README information.
 
 ### Requirements
 1. Requirements for Pytorch. We use Pytorch 1.2.0 in our experiments.
@@ -87,4 +92,4 @@ To create a submission for the GQA online server (test-standard set), call:
   ```
 
 ### Human Eye-tracking dataset for VQA (AiR-D)
-Our data is available at https://drive.google.com/file/d/1gJQdvBmqQIXOVZcXdvVlx1_0ufRaUsyS/view?usp=sharing. We provide both the saliency maps with aggregated fixations throughout the reasoning process (`aggregated_maps`) and the saliency maps for different time steps (`temporal_maps`). Saliency maps for correct and incorrect answers are stored in different folders (`fixmaps_corr` and `fixmaps_incorr`), and the saliency maps regardless of answer correctness are stored in `fixmaps`. For the saliency maps of different time steps, we highlight their starting times (e.g., `_1s` for saliency maps of 1-2 second), and put them in different folders.
+Our data is available at https://drive.google.com/file/d/1_yWlv3GXYw0-qBan5pPEmV8vd-Y8Duh5/view?usp=sharing. We provide both the saliency maps with aggregated fixations throughout the reasoning process (`aggregated_maps`) and the saliency maps for different time steps (`temporal_maps`). Saliency maps for correct and incorrect answers are stored in different folders (`fixmaps_corr` and `fixmaps_incorr`), and the saliency maps regardless of answer correctness are stored in `fixmaps`. For the saliency maps of different time steps, we highlight their starting times (e.g., `_1s` for saliency maps of 1-2 second), and put them in different folders.
