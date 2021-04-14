@@ -1,5 +1,5 @@
 # AiR: Attention with Reasoning capability
-**Update 2021-4**: We now provide the raw fixation sequences for AiR-D dataset!
+**Update 2021-4: We now provide the raw fixation sequences for AiR-D dataset!**
 
 This code implements the Attention with Reasoning capability (AiR) framework. It contains three principal components:
 - AiR-E: an quantitative evaluation method for measuring the alignments between different attentions and reasoning process,
