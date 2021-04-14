@@ -94,7 +94,7 @@ To create a submission for the GQA online server (test-standard set), call:
 ### Human Eye-tracking dataset for VQA (AiR-D)
 Our data is available at https://drive.google.com/file/d/1_yWlv3GXYw0-qBan5pPEmV8vd-Y8Duh5/view?usp=sharing. We provide both the saliency maps with aggregated fixations throughout the reasoning process (`aggregated_maps`) and the saliency maps for different time steps (`temporal_maps`). Saliency maps for correct and incorrect answers are stored in different folders (`fixmaps_corr` and `fixmaps_incorr`), and the saliency maps regardless of answer correctness are stored in `fixmaps`. For the saliency maps of different time steps, we highlight their starting times (e.g., `_1s` for saliency maps of 1-2 second), and put them in different folders.
 
-## Update 2021-4
+### Update 2021-4
 We now provide the raw fixation sequences for AiR-D, available at https://drive.google.com/file/d/1HFlX09kRB2lOa6qYihFjQ0Q8KSvxfPcZ/view?usp=sharing. The data contains both the answer responses from our participants and their fixation sequences. The responses are stored in `consolidated_answers.json` (`nan` means the participant does not attempt the question), together with the ground truth answers. The fixations sequences are stored in the `fix` folder, where each mat file corresponds to the sequence of a single participant (anonymized) on the specific question. The location and time interval (starting time and end time) of a fixation are stored under the name `xy` and `t`, respectively.
 
 We also develop a new computational model for task-driven scan-path prediction, please refer to [this repo](https://github.com/chenxy99/Scanpaths) for details.
