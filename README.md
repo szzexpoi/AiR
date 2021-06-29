@@ -1,5 +1,5 @@
 # AiR: Attention with Reasoning capability
-**Update 2021-6: We now provide a new hold-out testset of AiR-D for benchmarking task-driven saliency prediction and scanpth prediction!**
+**Update 2021-6: We now provide a new hold-out testset of AiR-D for benchmarking task-driven saliency prediction and scanpath prediction!**
 
 This code implements the Attention with Reasoning capability (AiR) framework. It contains three principal components:
 - AiR-E: an quantitative evaluation method for measuring the alignments between different attentions and reasoning process,
@@ -123,4 +123,4 @@ For saliency prediction, we accept results in the form of saliency maps stored a
         ...
 ```
 
-For scanpath prediction, we accept result in the form of JSON files. Please submit a single file for the general split (i.e., `air_scanpath_general.json`), and two separate files for the correctness split (i.e., `air_scanpath_correct.json` and `air_scanpath_incorrect.json`). Our evaluation is carried out on 10 generated scanpaths for each sample, and assumes scanpaths for images with width and height equals 320 and 240. Each scanpath should include the information for a sequence of fixations, including their x-axis, y-axis and duration. An example submission file is include [here](https://drive.google.com/file/d/1t8Xms3vXbd25HP_IihYd_jtI9kq00Ekf/view?usp=sharing), where the question IDs are used as keys.
+For scanpath prediction, we accept result in the form of JSON files. Please submit a single file for the general split (i.e., `air_scanpath_general.json`), and two separate files for the correctness split (i.e., `air_scanpath_correct.json` and `air_scanpath_incorrect.json`). Our evaluation is carried out on 10 generated scanpaths for each sample, and assumes scanpaths for images with width and height equals 320 and 240. Each scanpath should include the information for a sequence of fixations, including their x-axis, y-axis and duration. An example for the submission file is include [here](https://drive.google.com/file/d/1t8Xms3vXbd25HP_IihYd_jtI9kq00Ekf/view?usp=sharing), where the question IDs are used as keys.
