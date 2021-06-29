@@ -1,5 +1,5 @@
 # AiR: Attention with Reasoning capability
-**Update 2021-4: We now provide the raw fixation sequences for AiR-D dataset!**
+**Update 2021-6: We now provide a new hold-out testset of AiR-D for benchmarking task-driven saliency prediction and scanpth prediction!**
 
 This code implements the Attention with Reasoning capability (AiR) framework. It contains three principal components:
 - AiR-E: an quantitative evaluation method for measuring the alignments between different attentions and reasoning process,
@@ -96,7 +96,31 @@ To create a submission for the GQA online server (test-standard set), call:
 ### Human Eye-tracking dataset for VQA (AiR-D)
 Our data is available at https://drive.google.com/file/d/1_yWlv3GXYw0-qBan5pPEmV8vd-Y8Duh5/view?usp=sharing. We provide both the saliency maps with aggregated fixations throughout the reasoning process (`aggregated_maps`) and the saliency maps for different time steps (`temporal_maps`). Saliency maps for correct and incorrect answers are stored in different folders (`fixmaps_corr` and `fixmaps_incorr`), and the saliency maps regardless of answer correctness are stored in `fixmaps`. For the saliency maps of different time steps, we highlight their starting times (e.g., `_1s` for saliency maps of 1-2 second), and put them in different folders.
 
-### Scanpath Prediction with AiR-D
 We also provide the raw fixation sequences (scanpath) for AiR-D, available at https://drive.google.com/file/d/1HFlX09kRB2lOa6qYihFjQ0Q8KSvxfPcZ/view?usp=sharing. The data contains both the answer responses from our participants and their fixation sequences. The responses are stored in `consolidated_answers.json` (`nan` means the participant does not attempt the question), together with the ground truth answers. The fixations sequences are stored in the `fix` folder, where each mat file corresponds to the sequence of a single participant (anonymized) on the specific question. The location and time interval (starting time and end time) of a fixation are stored under the name `xy` and `t`, respectively.
 
-We also develop a new computational model for task-driven scanpath prediction, please refer to [this repo](https://github.com/chenxy99/Scanpaths) for details.
+A new computational model is developed for task-driven scanpath prediction, please refer to [this repo](https://github.com/chenxy99/Scanpaths) for details.
+
+### Benchmarking with AiR-D
+We now provide a new hold-out testset for evaluating task-driven attention modeling. The testset consists two evaluation splits, including [general split](https://drive.google.com/file/d/1xWpFjMyXGvIKrM53S4AjAd0qla8eWKE2/view?usp=sharing) that is agnostic to answer correctness, and the [correctness split](https://drive.google.com/file/d/1pM-N6ewuQz-4BXaMvKpkJ_GcX4WO_q_e/view?usp=sharing) for evaluation with both correct and incorrect attention. For each sample in the testset, we provide its GQA IDs (question ID and image ID), the corresponding split in the GQA dataset, and the question-answer pair. The eye-tracking annotations are kept private, and only for evaluation purpose.
+
+To evaluate your models with the testset, please email your results to chen4595@umn.edu. The results should be in the following formats:
+
+For saliency prediction, we accept results in the form of saliency maps stored as PNG files. Each result should be named based on the corresponding question ID in the GQA dataset. Results for different splits should be organized as:
+```
+<AiR-saliency>
+    -- ./general_split                        # results for the general split
+        201064885.png                         # saliency map for sample with qid 201064885
+        201735202.png
+        ...
+    -- ./correctness_split                    # results for the correctness split
+    -- ./correctness_split/correct            # saliency maps for correct attention                  
+        19209372.png
+        16934027.png
+        ...
+    -- ./correctness_split/incorrect            # saliency maps for incorrect attention
+        19209372.png
+        16934027.png
+        ...
+```
+
+For scanpath prediction, we accept result in the form of JSON files. Please submit a single file for the general split (i.e., `air_scanpath_general.json`), and two separate files for the correctness split (i.e., `air_scanpath_correct.json` and `air_scanpath_incorrect.json`). Our evaluation is carried out on 10 generated scanpaths for each sample, and assumes scanpaths for images with width and height equals 320 and 240. Each scanpath should include the information for a sequence of fixations, including their x-axis, y-axis and duration. An example submission file is include [here](https://drive.google.com/file/d/1t8Xms3vXbd25HP_IihYd_jtI9kq00Ekf/view?usp=sharing), where the question IDs are used as keys.
